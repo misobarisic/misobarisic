@@ -144,7 +144,7 @@ export const Player: React.FC<Props> = ({
             marginLeft: 8,
           }}
         >
-          <Text id="track" weight="extrabold">
+          <Text id="track" weight="bold">
             {`${track ?? ""} `.trim()}
           </Text>
           <Text id="artist" weight="bold" color={!track ? "gray" : undefined}>
