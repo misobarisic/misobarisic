@@ -19,8 +19,11 @@ const families = {
 };
 
 const weights = {
-  default: 400,
-  bold: 600,
+    default: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
 };
 
 const Text: React.FC<any> = ({
