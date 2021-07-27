@@ -3,6 +3,11 @@
 ![](https://visitor-badge.glitch.me/badge?page_id=github.com/misobarisic)
 [![Gmail Badge](https://img.shields.io/badge/-miso@misobarisic.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:miso@misobarisic.com)](mailto:miso@misobarisic.com)
 
+![](https://raw.githubusercontent.com/misobarisic/github-stats/master/generated/overview.svg)
+![](https://raw.githubusercontent.com/misobarisic/github-stats/master/generated/languages.svg)
+
+
+
 ### Languages and Tools
 <code><img height="27" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.5w4ncwZhfVuBgrKHeNoDhAHaJ4%26pid%3DApi&f=1" alt="java"></code>
 <code><img height="27" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Fthumbs%2F2x%2Fkotlin-1-logo.png&f=1&nofb=1" alt="kotlin"></code>
