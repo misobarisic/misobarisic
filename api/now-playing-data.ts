@@ -8,7 +8,7 @@ export default async function (req: NowRequest, res: NowResponse) {
     progress_ms: progress = 0,
   } = await nowPlaying();
 
-  res.setHeader("Content-Type", "application/jsonl");
+  res.setHeader("Content-Type", "application/json");
 
   const {duration_ms: duration, name: track, artists} = item;
   const {images = []} = item.album || {};
