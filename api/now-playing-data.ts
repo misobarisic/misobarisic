@@ -1,8 +1,5 @@
-import { NowRequest, NowResponse } from "@vercel/node";
-import { renderToString } from "react-dom/server";
-import { decode } from "querystring";
-import { Player } from "../components/NowPlaying2";
-import { nowPlaying } from "../utils/spotify";
+import {NowRequest, NowResponse} from "@vercel/node";
+import {nowPlaying} from "../utils/spotify";
 
 export default async function (req: NowRequest, res: NowResponse) {
   const {
@@ -13,8 +10,8 @@ export default async function (req: NowRequest, res: NowResponse) {
 
   res.setHeader("Content-Type", "application/jsonl");
 
-  const { duration_ms: duration, name: track } = item;
-  const { images = [] } = item.album || {};
+  const {duration_ms: duration, name: track, artists} = item;
+  const {images = []} = item.album || {};
 
   const cover = images[images.length - 1]?.url;
   let coverImg = null;
@@ -23,5 +20,5 @@ export default async function (req: NowRequest, res: NowResponse) {
     coverImg = `data:image/jpeg;base64,${Buffer.from(buff).toString("base64")}`;
   }
 
-  return res.status(200).json({isPlaying,progress,duration,track,cover});
+  return res.status(200).json({isPlaying, progress, duration, track, cover, artists});
 }
