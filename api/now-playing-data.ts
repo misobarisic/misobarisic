@@ -9,6 +9,7 @@ export default async function (req: NowRequest, res: NowResponse) {
   } = await nowPlaying();
 
   res.setHeader("Content-Type", "application/json");
+  res.setHeader('Access-Control-Allow-Origin', '*')
 
   const {duration_ms: duration, name: track, artists} = item;
   const {images = []} = item.album || {};
