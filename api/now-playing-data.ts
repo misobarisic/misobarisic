@@ -23,5 +23,5 @@ export default async function (req: NowRequest, res: NowResponse) {
     coverImg = `data:image/jpeg;base64,${Buffer.from(buff).toString("base64")}`;
   }
 
-  return res.status(200).send({isPlaying,progress,duration,track,cover});
+  return res.status(200).json({isPlaying,progress,duration,track,cover});
 }
