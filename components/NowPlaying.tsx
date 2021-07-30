@@ -3,21 +3,23 @@ import ReadmeImg from "./ReadmeImg";
 import Text from "./Text";
 
 export interface Props {
-  cover?: string;
-  track: string;
-  artist: string;
-  progress: number;
-  duration: number;
-  isPlaying: boolean;
+    cover?: string;
+    track: string;
+    artist: string;
+    progress: number;
+    duration: number;
+    isPlaying: boolean;
+    isBold?: boolean;
 }
 
 export const Player: React.FC<Props> = ({
-  cover,
-  track,
-  artist,
-  progress,
-  duration,
-  isPlaying,
+                                            cover,
+                                            track,
+                                            artist,
+                                            progress,
+                                            duration,
+                                            isPlaying,
+                                            isBold
 }) => {
   return (
     <ReadmeImg width="256" height="64">
@@ -144,10 +146,10 @@ export const Player: React.FC<Props> = ({
             marginLeft: 8,
           }}
         >
-          <Text id="track" weight="semibold">
+          <Text id="track" weight={isBold ? "bold" : "semibold"}>
             {`${track ?? ""} `.trim()}
           </Text>
-          <Text id="artist" color={!track ? "gray" : undefined}>
+          <Text id="artist" weight={isBold ? "semibold" : ""} color={!track ? "gray" : undefined}>
             {artist || "Nothing playing..."}
           </Text>
           {track && (

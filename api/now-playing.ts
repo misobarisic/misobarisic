@@ -38,7 +38,14 @@ export default async function (req: NowRequest, res: NowResponse) {
 
   const artist = (item.artists || []).map(({ name }) => name).join(", ");
   const text = renderToString(
-    Player({ cover: coverImg, artist, track, isPlaying, progress, duration })
+    Player({
+      isBold:typeof params.bold !== "undefined",
+      cover: coverImg,
+      artist,
+      track,
+      isPlaying,
+      progress,
+      duration })
   );
   return res.status(200).send(text);
 }
