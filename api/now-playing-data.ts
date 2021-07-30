@@ -10,9 +10,12 @@ export default async function (req: NowRequest, res: NowResponse) {
 
   res.setHeader("Content-Type", "application/json");
   res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'GET')
 
-  const {duration_ms: duration, name: track, artists} = item;
+  const {duration_ms: duration, name: track, artists,external_urls} = item;
   const {images = []} = item.album || {};
+  let href = ""
+  if (external_urls) href = external_urls.spotify
 
   const cover = images[images.length - 1]?.url;
   let coverImg = null;
@@ -21,5 +24,5 @@ export default async function (req: NowRequest, res: NowResponse) {
     coverImg = `data:image/jpeg;base64,${Buffer.from(buff).toString("base64")}`;
   }
 
-  return res.status(200).json({isPlaying, progress, duration, track, cover, artists});
+  return res.status(200).json({href,isPlaying, progress, duration, track, cover, artists});
 }
